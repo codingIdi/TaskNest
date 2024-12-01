@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Full-screen gradient background */
+body, html {
+    height: 100%;
+    background: linear-gradient(135deg, #8fd3f4,  #FF6F61); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* add button styling */
+#adding {
+    border: none;
+    outline: none;
+    /*padding: 16px 50px;
+    background: #FFA08C;
+    color: #fff;
+    font-size: 16px;*/
+    cursor: pointer;
+    border-radius: 40px;
+}
+/*#adding:hover{
+        
+        transform: scale(1.05);
+    
+}
+/*#E6554A*/
+#adding:active{
+    /*background: #FF6F61;*/
+    transform: scale(1.05);
+
+}
+
+/* Todo App container */
+.todo-app {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff; /* White background for contrast */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header styling */
+.todo-app h2 {
+    background-color: #FF6F61; /* Coral */
+    color: black;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.todo-app h2 img {
+    width: 40px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the image vertically with the text */
+    margin-left: 10px; /* Add some space between the text and the image */
+}
+
+
+/* Input row styling */
+.row {
+    display: flex;
+    align-items: center;
+    background: #b3e5fc; /* Light cyan */
+    border-radius: 15px;
+    padding: 12px;
+    margin-bottom: 20px;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+/* Hover effect on input row */
+.row:hover {
+    transform: scale(1.02);
+}
+
+/* Task input styling */
+input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 8px;
+}
+
+input::placeholder {
+    color: #888; /* Gray placeholder text */
+    font-style: italic;
+}
+
+/* Add button styling */
+button {
+    padding: 10px 15px;
+   /* background-color: #FF6F61; /* Coral */
+    /*color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;*/
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s ease-in-out;
+}
+
+/*button:hover {
+    /*background-color: #FF4E50; /* Darker coral on hover */
+    /*transform: scale(1.05);
+}
+
+/* Task list styling */
+ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ul li {
+    font-size: 1rem;
+    background-color: #FFCC80; /* Bright yellow for tasks */
+    padding: 14px 12px 14px 50px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+ul li:hover {
+    background-color: #b3e5fc;/*#FFD54F; /* Slightly darker yellow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #C8E6C9; /* Light green for completed tasks */
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: url("check-circle-svgrepo-com.svg");
+    background-size: cover;
+    background-position: center;
+    top: 10px;
+    left: 10px;
+}
+
+ul li.checked::before {
+    background-image: url("check-circle-svgrepo-com1.svg");
+}
+
+/* Close button for task items */
+/* Task list styling */
+ul li {
+    font-size: 1rem;
+    background-color: #FFB8A6; /* Bright yellow for tasks */
+    padding: 14px 12px 14px 50px; /* Space on left for icon */
+    padding-right: 70px; /* Extra space on right to avoid touching "X" */
+    margin-bottom: 12px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+/* Close button styling */
+ul li span {
+    position: absolute;
+    right: 20px; /* Fixed position for "X" button */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    color:#555;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #e0f7fa;/*#e0f7fa; /* Lighter coral for hover */
+
+
+
+}
+
+ul li span:hover {
+    color: black;
+    transition: background-color 0.3s, box-shadow 0.2s;
+
+
+
+
+}
+
+
+/* Clock styling */
+#clock {
+    background-color: transparent; /* Dark background for clock */
+    color: white;
+    border-radius: 8px;
+    padding-left: 265px;
+    text-align: center;
+    margin-top: 30px;
+
+}
+
+
+
+#clock p {
+    margin: 1px 0px;
+    font-size: 1em;
+    color: #FF6F61; /* Coral color for date/time */
+}
+
+#undo-button {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    padding: 12px 24px;
+    border-radius: 50px;
+    border-style: none;
+    cursor: pointer;
+    transform: scale(1); 
+    opacity: 0; 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+    display: none; 
+    background-color: transparent; /* Ensure no background color */
+}
+
+#undo-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.undoImg {
+    background-color: transparent; /* Ensure the image background is transparent */
+    height: 50px;
+    width: 50px;
+}
+
+
+
+.undoImg:active{
+    transform: scale(1.05);
+
+}
+.undoImg2{
+    height: 50px;
+    width: 50px;
+}
+#undo-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    border-radius: 12px;
+
+}
+
+.addImg{
+    background-color: transparent; /* Ensure the image background is transparent */
+    height: 50px;
+    width: 50px;
+}
+
+input::placeholder {
+    position: relative; /* Allows positioning the pop-up relative to this div */
+}
+
+
+
+
+
+    
+
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .todo-app {
+        padding: 20px;
+    }
+
+    .todo-app h2 {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
